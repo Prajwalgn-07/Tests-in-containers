@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  Image1:
+    build: .
+    container_name: test_in_container_1
+    image: test_in_container_1
+    environment:
+      - "Replica1=${Replica1}"
+    command: ["/bin/bash", "-c", $Replica2 ]
+    volumes:
+      - /Users/prajwal/Desktop/docker-allure:/app/target/
+  Image2:
+    build: .
+    container_name: test_in_container_2
+    image: test_in_container_2
+    environment:
+      - "Replica2=${Replica2}"
+    command: ["/bin/bash", "-c", $Replica2 ]
+    volumes:
+      - /Users/prajwal/Desktop/docker-allure:/app/target/

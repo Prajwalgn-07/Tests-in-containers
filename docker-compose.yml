@@ -6,15 +6,15 @@ services:
     image: test_in_container_1
     environment:
       - "Replica1=${Replica1}"
-    command: ["/bin/bash", "-c", $Replica2 ]
+    command: bash -c "$Replica1"
     volumes:
-      - /Users/prajwal/Desktop/docker-allure:/app/target/
+      - "${DOCKER_VOLUME_PATH}:/app/target/"
   Image2:
     build: .
     container_name: test_in_container_2
     image: test_in_container_2
     environment:
       - "Replica2=${Replica2}"
-    command: ["/bin/bash", "-c", $Replica2 ]
+    command: bash -c "$Replica1"
     volumes:
-      - /Users/prajwal/Desktop/docker-allure:/app/target/
+      - "${DOCKER_VOLUME_PATH}:/app/target/"

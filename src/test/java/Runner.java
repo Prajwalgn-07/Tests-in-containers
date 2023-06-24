@@ -20,7 +20,7 @@ public class Runner {
     @Test(groups = "test3")
     void test3() {
         System.out.println("Hello World3");
-        assertThat("Yes", 1, equalTo(1));
+        assertThat("Yes", 1, equalTo(2));
     }
 
     @Test(groups = "test4")

@@ -6,7 +6,7 @@ services:
     image: test_in_image_1
     environment:
       - "Container1=${Container1}"
-    command: bash -c "($Replica1) & tail -F /dev/null"
+    command: bash -c "($Container1) & tail -F /dev/null"
     volumes:
       - test-results:/app/allure-results/
 
@@ -16,7 +16,7 @@ services:
     image: test_in_image_2
     environment:
       - "Container2=${Container2}"
-    command: bash -c "($Replica2) & tail -F /dev/null"
+    command: bash -c "($Container2) & tail -F /dev/null"
     volumes:
       - test-results:/app/allure-results/
 

@@ -8,13 +8,29 @@ services:
       - "Replica1=${Replica1}"
     command: bash -c "$Replica1"
     volumes:
-      - "${DOCKER_VOLUME_PATH}:/app/target/"
+      - test-results:/app/allure-results/
   Image2:
     build: .
     container_name: test_in_container_2
     image: test_in_container_2
     environment:
       - "Replica2=${Replica2}"
-    command: bash -c "$Replica1"
+    command: bash -c "$Replica2"
     volumes:
-      - "${DOCKER_VOLUME_PATH}:/app/target/"
+      - test-results:/app/allure-results/
+
+  allure:
+    image: "frankescobar/allure-docker-service"
+    depends_on:
+      - Image1
+      - Image2
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 10
+      KEEP_HISTORY: 1
+    ports:
+      - "5050:5050"
+    volumes:
+      - test-results:/app/allure-results
+
+volumes:
+  test-results:

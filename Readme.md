@@ -69,5 +69,10 @@ mvn  test -Dgroups={group_name}
 http://localhost:5050/allure-docker-service/latest-report
 ```
 
-
-
+### Resources
+- [Environment variables in Compose Rotem Boguslavsky](https://medium.com/@rotempinchevskiboguslavsky/environment-variables-in-container-vs-docker-compose-file-2426b2ec7d8b)
+- [Docker Compose Environment Variables](https://docs.docker.com/compose/environment-variables/set-environment-variables/)
+- [allure-docker-service](https://github.com/fescobar/allure-docker-service)
+- [docker volumes by techworld with nana](https://www.youtube.com/watch?v=p2PH_YPCsis)
+- [docker-volumes](https://docs.docker.com/storage/volumes/)
+- [Keep container running](https://stackoverflow.com/questions/38546755/docker-compose-keep-container-running)

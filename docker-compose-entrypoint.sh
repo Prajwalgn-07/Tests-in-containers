@@ -7,18 +7,15 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-# remove the contents of allure-results directory
-rm -rf allure-results/*
-
 # Assign the arguments to variables
-Replica1="mvn test $1"
-Replica2="mvn test $2"
+Container1="mvn test $1"
+Container2="mvn test $2"
 
 # Create the .env file
-echo "Replica1=$Replica1" >> .env
-echo "Replica2=$Replica2" >> .env
+echo "Container1=$Container1" >> .env
+echo "Container2=$Container2" >> .env
 
 # Success message
 echo "The .env file has been created successfully."
 
-docker-compose up
+docker-compose up -d

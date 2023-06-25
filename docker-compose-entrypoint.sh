@@ -7,9 +7,6 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-# remove the contents of allure-results directory
-rm -rf allure-results/*
-
 # Assign the arguments to variables
 Replica1="mvn test $1"
 Replica2="mvn test $2"

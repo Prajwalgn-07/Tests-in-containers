@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test_in_container" parallel="methods" allow-return-values="true">
+
+    <test name="first_container">
+        <packages>
+            <package name="first_container"/>
+        </packages>
+    </test>
+
+    <test name="second_container">
+        <packages>
+            <package name="second_container"/>
+        </packages>
+    </test>
+
+</suite>

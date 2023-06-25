@@ -6,16 +6,17 @@ services:
     image: test_in_container_1
     environment:
       - "Replica1=${Replica1}"
-    command: bash -c "mvn test $Replica1 && tail -f /dev/null"
+    command: bash -c "($Replica1) & tail -F /dev/null"
     volumes:
       - test-results:/app/allure-results/
+
   Image2:
     build: .
     container_name: test_in_container_2
     image: test_in_container_2
     environment:
       - "Replica2=${Replica2}"
-    command: bash -c "mvn test $Replica2 && tail -f /dev/null"
+    command: bash -c "($Replica2) & tail -F /dev/null"
     volumes:
       - test-results:/app/allure-results/
 

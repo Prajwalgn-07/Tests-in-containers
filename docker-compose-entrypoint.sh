@@ -18,4 +18,4 @@ echo "Replica2=$Replica2" >> .env
 # Success message
 echo "The .env file has been created successfully."
 
-docker-compose up
+docker-compose up -d

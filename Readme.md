@@ -20,7 +20,11 @@ and generate a common allure report.
 ## How to run
 
 1. Clone the repository
-2. Run the following command to run the tests in multiple containers and generate a common allure report.
+2. Give execute permission to the `docker-compose-entrypoint.sh` file
+```bash
+chmod +x docker-compose-entrypoint.sh
+```
+3. Run the following command to run the tests in multiple containers and generate a common allure report.
 * To run specific groups, use the following command
 ```bash
 ./docker-compose-entrypoint.sh  <-Dgroups={group_name}> <-Dgroups={group_name}>
